@@ -12,7 +12,7 @@ import it.unibo.pps.ese.model.components._
 import it.unibo.pps.ese.model.components.animals.DigestionEnd
 import it.unibo.pps.ese.model.components.animals.brain.Direction.Direction
 import it.unibo.pps.ese.model.components.animals.brain.decisionsupport._
-import it.unibo.pps.ese.model.components.animals.brain.decisionsupport.EntityAttributesImplUtils._
+import it.unibo.pps.ese.model.components.animals.brain.decisionsupport.EntityAttributesImpl._
 import it.unibo.pps.ese.model.components.animals.brain.cerebralcortex.hippocampus.Hippocampus
 import it.unibo.pps.ese.model.components.animals.brain.cerebralcortex.hippocampus.Hippocampus._
 import it.unibo.pps.ese.model.components.animals.reproduction._

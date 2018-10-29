@@ -1,7 +1,7 @@
 package it.unibo.pps.ese.model.components.animals.brain.decisionsupport
 
 
-import it.unibo.pps.ese.model.components.animals.brain.decisionsupport.EntityAttributesImplUtils._
+import it.unibo.pps.ese.model.components.animals.brain.decisionsupport.EntityAttributesImpl._
 import it.unibo.pps.ese.controller.simulation.DynamicRules
 
 import scala.math._

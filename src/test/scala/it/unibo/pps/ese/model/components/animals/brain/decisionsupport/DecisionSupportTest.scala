@@ -3,7 +3,7 @@ package it.unibo.pps.ese.model.components.animals.brain.decisionsupport
 import it.unibo.pps.ese.controller.simulation.DynamicRules
 import it.unibo.pps.ese.model.components.animals.brain.decisionsupport.WorldRulesImplUtils._
 import org.scalatest.FunSuite
-import it.unibo.pps.ese.model.components.animals.brain.decisionsupport.EntityAttributesImplUtils._
+import it.unibo.pps.ese.model.components.animals.brain.decisionsupport.EntityAttributesImpl._
 
 
 class DecisionSupportTest extends FunSuite {
