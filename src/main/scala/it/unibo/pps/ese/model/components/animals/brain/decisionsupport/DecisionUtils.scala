@@ -1,6 +1,7 @@
 package it.unibo.pps.ese.model.components.animals.brain.decisionsupport
 
 import it.unibo.pps.ese.controller.simulation.DynamicRules
+import it.unibo.pps.ese.model.components.animals.brain.decisionsupport.EntityAttributesImpl._
 import it.unibo.pps.ese.model.components.animals.brain.decisionsupport.EntityKinds.EntityKinds
 import it.unibo.pps.ese.model.components.animals.brain.decisionsupport.GenderTypes.GenderTypes
 
@@ -135,20 +136,6 @@ case class GeneralPosition[PositionMeasure <: Int](x: PositionMeasure, y: Positi
   def sameOrdinate(generalPosition: GeneralPosition[PositionMeasure]): Int = if (y == generalPosition.y) 0 else if (y > generalPosition.y) 1 else -1
 }
 
-/**
-  * A specific implementation that offers a interpretation of entities.
-  * @param name the entity identifier
-  * @param kind the entity species
-  * @param height the entity height
-  * @param strength the ability of the entity to attack
-  * @param defense the ability of the entity to defense
-  * @param position the position of the entity specified in coordinates
-  * @param attractiveness the charm of the entity that involves the modalities of coupling
-  * @param gender the entity gender
-  */
-case class EntityAttributesImpl(name: String, kind: EntityKinds, height: Double, strength: Double, defense: Double, var position: GeneralPosition[Int], attractiveness: Double, gender: GenderTypes){
-  override def toString: String = "Entity(" + name + ", " + kind + ", " + height + ", " + strength + ", " + defense + ", [" + position.x + ", " + position.y + "], " + attractiveness + ", " + gender + ")"
-}
 
 /**
   * A wrapper for animal attributes.
@@ -167,9 +154,27 @@ object PlantAttributes {
 /**
   * Some utils that allow to write attributes easily.
   */
-object EntityAttributesImplUtils {
+object EntityAttributesImpl {
+  def apply(name: String, kind: EntityKinds, height: Double, strength: Double, defense: Double, position: GeneralPosition[Int], attractiveness: Double, gender: GenderTypes): EntityAttributesImpl =
+    EntityAttributesImpl(name, kind, height, strength, defense, position, attractiveness, gender)
+
   implicit def generalPositionToTuple(generalPosition: GeneralPosition[Int]): (Int, Int) = (generalPosition.x, generalPosition.y)
   implicit def tupleToGeneralPosition(tuple: (Int, Int)): GeneralPosition[Int] = GeneralPosition(tuple._1, tuple._2)
+
+  /**
+    * A specific implementation that offers a interpretation of entities.
+    * @param name the entity identifier
+    * @param kind the entity species
+    * @param height the entity height
+    * @param strength the ability of the entity to attack
+    * @param defense the ability of the entity to defense
+    * @param position the position of the entity specified in coordinates
+    * @param attractiveness the charm of the entity that involves the modalities of coupling
+    * @param gender the entity gender
+    */
+  case class EntityAttributesImpl(name: String, kind: EntityKinds, height: Double, strength: Double, defense: Double, var position: GeneralPosition[Int], attractiveness: Double, gender: GenderTypes){
+    override def toString: String = "Entity(" + name + ", " + kind + ", " + height + ", " + strength + ", " + defense + ", [" + position.x + ", " + position.y + "], " + attractiveness + ", " + gender + ")"
+  }
 }
 
 /**
